@@ -1,4 +1,4 @@
-{% set version = "2.0.4" %}
+{% set version = "2.0.5" %}
 
 package:
   name: portmidi
@@ -6,23 +6,23 @@ package:
 
 source:
   url: https://github.com/PortMidi/portmidi/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 64893e823ae146cabd3ad7f9a9a9c5332746abe7847c557b99b2577afa8a607c
+  sha256: 97a30eb0ca3fed39bcdcffea06392a82daa325dadc88b0ba083dac1518a57bd3
 
 build:
-  number: 2
+  number: 0
   run_exports:
     - {{ pin_subpackage("portmidi", max_pin="x") }}
 
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
     - cmake
     - ninja
   host:
     - alsa-lib  # [linux]
   run_constrained:
-    - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.9") }}  # [osx and x86_64]
 
 test:
   commands:
