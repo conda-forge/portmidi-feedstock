@@ -1,4 +1,4 @@
-{% set version = "2.0.5" %}
+{% set version = "2.0.6" %}
 
 package:
   name: portmidi
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/PortMidi/portmidi/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 97a30eb0ca3fed39bcdcffea06392a82daa325dadc88b0ba083dac1518a57bd3
+  sha256: 81d22b34051621cd56c8d5ef12908ef2a59764c9cdfba6dae47aabddb71ac914
 
 build:
   number: 0
